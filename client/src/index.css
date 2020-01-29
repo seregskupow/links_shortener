@@ -1,0 +1,47 @@
+@import "~materialize-css/dist/css/materialize.min.css";
+
+body{
+  background: #303a52;
+  color:rgb(226, 225, 225);;
+}
+.nav-wrapper{
+  background:#9e579d;
+}
+input.yellow-input {
+  border-bottom: 1px solid rgb(226, 225, 225)!important;
+  box-shadow: 0 1px 0 0 rgb(226, 225, 225)!important;
+}
+.card{
+  background:#252d3f!important;
+}
+.btn:nth-of-type(1){
+  background:#9e579d;
+}
+.btn:nth-of-type(2){
+  background:#fc85ae;
+}
+input.yellow-input + label {
+  color: #9e579d!important;
+
+}
+
+input.yellow-input:focus + label {
+  color: #fc85ae!important;
+}
+nav{
+  color:#303a52!important;
+}
+.sidenav{
+  background:#252d3f;
+  
+}
+.sidenav li a{
+  color:#fff;
+}
+.active{
+  color:#fc85ae!important;
+}
+input.yellow-input:focus {
+  border-bottom: 1px solid #fc85ae!important;
+  box-shadow: 0 1px 0 0 #fc85ae!important;
+}
