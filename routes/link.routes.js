@@ -12,7 +12,7 @@ router.post('/generate', auth, async (req, res) => {
 
     const code = shortid.generate()
 
-    const existing = await Link.findOne({ from })
+    const existing = await Link.findOne({ from,owner: req.user.userId })
 
     if (existing) {
       return res.json({ link: existing })
@@ -49,5 +49,12 @@ router.get('/:id', auth, async (req, res) => {
     res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
   }
 })
-
+router.post('/delete',auth,async (req,res)=>{
+  try {
+    await Link.deleteOne({_id:req.body.id});
+    res.json({msg:'Deleted successfully'})
+  } catch (e) {
+    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
+  }
+})
 module.exports = router
